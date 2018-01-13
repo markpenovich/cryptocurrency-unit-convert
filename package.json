@@ -1,7 +1,7 @@
 {
   "name": "cryptocurrency-unit-convert",
   "version": "0.1.1",
-  "description": "",
+  "description": "This package converts cryptocurrency units.",
   "main": "index.js",
   "engines": {
     "node": ">=4.2.4"
@@ -10,7 +10,11 @@
     "dev": " node index.js",
     "test": "mocha --reporter spec"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markpenovich/cryptocurrency-unit-convert"
+  },
+  "author": "Mark Penovich <mpenovich1@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "assert": "^1.4.1",

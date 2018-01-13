@@ -34,4 +34,24 @@ const convertedBTC = Units.convertBTC('1.5', 'btc', 'satoshi') // '150000000'
 
 // Convert 1 wei to eth
 const convertedETH = Units.convertETH('1', 'wei', 'eth') // '0.000000000000000001'
+
+// Convert 1.5 eth to wei
+const convertedETH = Units.convertETH('1.5', 'eth', 'wei') // '1500000000000000000'
+
+// Convert 1 drop to xrp
+const convertedXRP = Units.convertXRP('1', 'drop', 'xrp') // '0.000001'
+
+// Convert 1.5 xrp to drop
+const convertedXRP = Units.convertXRP('1.5', 'xrp', 'drop') // '1500000'
+
+// Convert 1 photon to ltc
+const convertedLTC = Units.convertLTC('1', 'photon', 'ltc') // '0.00000001'
+
+// Convert 1.5 ltc to photon
+const convertedLTC = Units.convertLTC('1.5', 'ltc', 'photon') // '150000000'
 ```
+
+## Limitations
+Only the smallest unit and main unit are available for each currency.
+
+For example, only 'satoshi' and 'btc' are available for conversion on bitcoin.
