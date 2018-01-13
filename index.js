@@ -4,10 +4,10 @@ var BigNumber = require('bignumber.js')
 
 var Units = {}
 
-var rawBtcUnits = require('./btcUnits.json')
-var rawEthUnits = require('./ethUnits.json')
-var rawXrpUnits = require('./xrpUnits.json')
-var rawLtcUnits = require('./ltcUnits.json')
+var rawBtcUnits = require('./utils/json/btcUnits.json')
+var rawEthUnits = require('./utils/json/ethUnits.json')
+var rawXrpUnits = require('./utils/json/xrpUnits.json')
+var rawLtcUnits = require('./utils/json/ltcUnits.json')
 var btcUnits = {}
 var ethUnits = {}
 var xrpUnits = {}
