@@ -58,7 +58,7 @@ satoshi, bit, ubit, mbit, btc
 
 #### Ethereum
 
-wei, eth
+wei, kwei, mwei, gwei, finney, eth
 
 #### Ripple
 

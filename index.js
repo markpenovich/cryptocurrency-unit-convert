@@ -45,7 +45,7 @@ Units.convertBTC = function(value, from, to) {
   if (!btcUnits[to]) {
     throw new Error('Unsupported input unit')
   }
-  return new BigNumber(value).times(btcUnits[from]).div(btcUnits[to]).toString(10);
+  return new BigNumber(value, 10).times(btcUnits[from]).div(btcUnits[to]).round(0, BigNumber.ROUND_DOWN).toString(10);
 }
 
 Units.convertETH = function(value, from, to) {
@@ -60,7 +60,7 @@ Units.convertETH = function(value, from, to) {
   if (!ethUnits[to]) {
     throw new Error('Unsupported input unit')
   }
-  return new BigNumber(value).times(ethUnits[from]).div(ethUnits[to]).toString(10);
+  return new BigNumber(value, 10).times(ethUnits[from]).div(ethUnits[to]).round(0, BigNumber.ROUND_DOWN).toString(10);
 }
 
 Units.convertXRP = function(value, from, to) {
@@ -75,7 +75,7 @@ Units.convertXRP = function(value, from, to) {
   if (!xrpUnits[to]) {
     throw new Error('Unsupported input unit')
   }
-  return new BigNumber(value).times(xrpUnits[from]).div(xrpUnits[to]).toString(10);
+  return new BigNumber(value).times(xrpUnits[from]).div(xrpUnits[to]).round(0, BigNumber.ROUND_DOWN).toString(10);
 }
 
 Units.convertLTC = function(value, from, to) {
@@ -90,7 +90,7 @@ Units.convertLTC = function(value, from, to) {
   if (!ltcUnits[to]) {
     throw new Error('Unsupported input unit')
   }
-  return new BigNumber(value).times(ltcUnits[from]).div(ltcUnits[to]).toString(10);
+  return new BigNumber(value).times(ltcUnits[from]).div(ltcUnits[to]).round(0, BigNumber.ROUND_DOWN).toString(10);
 }
 
 module.exports = Units
