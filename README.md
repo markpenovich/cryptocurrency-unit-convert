@@ -51,7 +51,19 @@ const convertedLTC = Units.convertLTC('1', 'photon', 'ltc') // '0.00000001'
 const convertedLTC = Units.convertLTC('1.5', 'ltc', 'photon') // '150000000'
 ```
 
-## Limitations
-Only the smallest unit and main unit are available for each currency.
+## Units
+#### Bitcoin
 
-For example, only 'satoshi' and 'btc' are available for conversion on bitcoin.
+satoshi, bit, ubit, mbit, btc
+
+#### Ethereum
+
+wei, eth
+
+#### Ripple
+
+drop, xrp
+
+#### Litecoin
+
+litoshi, photon, lite, ltc
