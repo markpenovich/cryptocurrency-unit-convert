@@ -1,6 +1,6 @@
 {
   "name": "cryptocurrency-unit-convert",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "This package converts cryptocurrency units",
   "main": "index.js",
   "engines": {

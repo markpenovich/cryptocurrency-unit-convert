@@ -31,7 +31,7 @@ Units.ethUnits = rawEthUnits
 Units.xrpUnits = rawXrpUnits
 Units.ltcUnits = rawLtcUnits
 
-var regX = RegExp(/^[0-9]+\.?[0-9]*$/)
+var regX = RegExp(/^-?\d*\.?\d*$/)
 
 Units.convertBTC = function(value, from, to) {
   if (!regX.test(value)) {
