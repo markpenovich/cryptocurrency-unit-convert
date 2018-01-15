@@ -17,6 +17,20 @@ describe('#convert', function() {
     assert.equal(Units.convertETH('20.005', 'kwei', 'wei'), '20005')
     assert.equal(Units.convertETH('20.0005', 'kwei', 'wei'), '20000')
   })
+  it('should convert Ripple big unit to small unit', function() {
+    assert.equal(Units.convertXRP('1', 'xrp', 'drop'), '1000000')
+    assert.equal(Units.convertXRP('1.5', 'xrp', 'drop'), '1500000')
+    assert.equal(Units.convertXRP('1.05', 'xrp', 'drop'), '1050000')
+    assert.equal(Units.convertXRP('1.0000005', 'xrp', 'drop'), '1000000')
+  })
+  it('should convert Litecoin big unit to small unit', function() {
+    assert.equal(Units.convertLTC('1', 'ltc', 'litoshi'), '100000000')
+    assert.equal(Units.convertLTC('1', 'lite', 'litoshi'), '100000')
+    assert.equal(Units.convertLTC('1', 'photon', 'litoshi'), '100')
+    assert.equal(Units.convertLTC('1.5', 'photon', 'litoshi'), '150')
+    assert.equal(Units.convertLTC('1.05', 'photon', 'litoshi'), '105')
+    assert.equal(Units.convertLTC('1.005', 'photon', 'litoshi'), '100')
+  })
   it('should fail on invalid input units', function () {
     assert.throws(function () {
       Units.convertETH('1', 'random', 'wei')
