@@ -2,11 +2,26 @@ var assert = require('assert')
 var Units = require('../index.js');
 
 describe('#convert', function() {
-  it('should convert Bitcoin big unit to small unit', function() {
+  it('should convert BTC to smaller units', function() {
+    assert.equal(Units.convertBTC('1', 'btc', 'mbtc'), '1000')
+    assert.equal(Units.convertBTC('1', 'btc', 'ubtc'), '1000000')
+    assert.equal(Units.convertBTC('1', 'btc', 'bit'), '1000000')
     assert.equal(Units.convertBTC('1', 'btc', 'satoshi'), '100000000')
-    assert.equal(Units.convertBTC('20', 'mbtc', 'satoshi'), '2000000')
-    assert.equal(Units.convertBTC('20.10', 'mbtc', 'satoshi'), '2010000')
-    assert.equal(Units.convertBTC('20.05', 'bit', 'satoshi'), '2005')
+
+    // assert.equal(Units.convertBTC('20', 'mbtc', 'satoshi'), '2000000')
+    // assert.equal(Units.convertBTC('20.10', 'mbtc', 'satoshi'), '2010000')
+    // assert.equal(Units.convertBTC('20.05', 'bit', 'satoshi'), '2005')
+  })
+  it('should convert mbtc to other units', function() {
+    assert.equal(Units.convertBTC('1', 'mbtc', 'btc'), '0.001')
+    assert.equal(Units.convertBTC('1', 'mbtc', 'ubtc'), '1000')
+    assert.equal(Units.convertBTC('1', 'mbtc', 'satoshi'), '100000')
+  })
+  it('should convert Satoshi to bigger units', function() {
+    assert.equal(Units.convertBTC('1', 'satoshi', 'bit'), '0.01')
+    assert.equal(Units.convertBTC('1', 'satoshi', 'ubtc'), '0.01')
+    assert.equal(Units.convertBTC('1', 'satoshi', 'mbtc'), '0.00001')
+    assert.equal(Units.convertBTC('1', 'satoshi', 'btc'), '0.00000001')
   })
   it('should convert Ethereum big unit to small unit', function() {
     assert.equal(Units.convertETH('1', 'eth', 'wei'), '1000000000000000000')
@@ -30,5 +45,11 @@ describe('#convert', function() {
     assert.throws(function () {
       Units.convertETH('1', 'random', 'wei')
     }, /^Error: Unsupported input unit$/)
+  })
+  it('should work with decimal first numbers', function() {
+    assert.equal(Units.convertBTC('.1', 'btc', 'satoshi'), '10000000')
+  })
+  it('should work with any capitalization', function() {
+    assert.equal(Units.convertBTC('1', 'bTc', 'satOSHi'), '100000000')
   })
 })
