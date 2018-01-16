@@ -1,4 +1,6 @@
 # cryptocurrency-unit-convert
+[![Build Status](https://travis-ci.org/markpenovich/cryptocurrency-unit-convert.svg?branch=master)](https://travis-ci.org/markpenovich/cryptocurrency-unit-convert)
+
 Cryptocurrency unit conversion utility.
 
 Currently supports Bitcoin, Ethereum, Ripple, and Litecoin.
