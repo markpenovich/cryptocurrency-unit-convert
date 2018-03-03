@@ -2,35 +2,38 @@
 
 var BigNumber = require('bignumber.js')
 
-var Units = {}
+var rawUnits = require('./utils/json/Units.json')
 
-var rawBtcUnits = require('./utils/json/btcUnits.json')
-var rawEthUnits = require('./utils/json/ethUnits.json')
-var rawXrpUnits = require('./utils/json/xrpUnits.json')
-var rawLtcUnits = require('./utils/json/ltcUnits.json')
+const Units = {}
 
-var btcUnits = {}
-var ethUnits = {}
-var xrpUnits = {}
-var ltcUnits = {}
+const btcUnits = {}
+const ethUnits = {}
+const xrpUnits = {}
+const ltcUnits = {}
 
-Object.keys(rawBtcUnits).map(function (unit) {
-  btcUnits[unit] = new BigNumber(rawBtcUnits[unit], 10)
-})
-Object.keys(rawEthUnits).map(function (unit) {
-  ethUnits[unit] = new BigNumber(rawEthUnits[unit], 10)
-})
-Object.keys(rawXrpUnits).map(function (unit) {
-  xrpUnits[unit] = new BigNumber(rawXrpUnits[unit], 10)
-})
-Object.keys(rawLtcUnits).map(function (unit) {
-  ltcUnits[unit] = new BigNumber(rawLtcUnits[unit], 10)
-})
-
-Units.btcUnits = rawBtcUnits
-Units.ethUnits = rawEthUnits
-Units.xrpUnits = rawXrpUnits
-Units.ltcUnits = rawLtcUnits
+Object.keys(rawUnits).map(function (rawUnit) {
+  if (rawUnit === 'btc') {
+    Object.keys(rawUnits[rawUnit]).map(function(i) {
+      btcUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10)
+    })
+    Units.btcUnits = rawUnits[rawUnit]
+  } else if (rawUnit === 'eth') {
+    Object.keys(rawUnits[rawUnit]).map(function(i) {
+      ethUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10)
+    })
+    Units.ethUnits = rawUnits[rawUnit]
+  } else if (rawUnit === 'xrp') {
+    Object.keys(rawUnits[rawUnit]).map(function(i) {
+      xrpUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10)
+    })
+    Units.xrpUnits = rawUnits[rawUnit]
+  } else if (rawUnit === 'ltc') {
+    Object.keys(rawUnits[rawUnit]).map(function(i) {
+      ltcUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10)
+    })
+    Units.ltcUnits = rawUnits[rawUnit]
+  }
+});
 
 var regX = RegExp(/^-?\d*\.?\d*$/)
 
