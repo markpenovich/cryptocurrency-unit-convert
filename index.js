@@ -17,17 +17,20 @@ Object.keys(rawUnits).map(function (rawUnit) {
       btcUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10)
     })
     Units.btcUnits = rawUnits[rawUnit]
-  } else if (rawUnit === 'eth') {
+  }
+  if (rawUnit === 'eth') {
     Object.keys(rawUnits[rawUnit]).map(function(i) {
       ethUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10)
     })
     Units.ethUnits = rawUnits[rawUnit]
-  } else if (rawUnit === 'xrp') {
+  }
+  if (rawUnit === 'xrp') {
     Object.keys(rawUnits[rawUnit]).map(function(i) {
       xrpUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10)
     })
     Units.xrpUnits = rawUnits[rawUnit]
-  } else if (rawUnit === 'ltc') {
+  }
+  if (rawUnit === 'ltc') {
     Object.keys(rawUnits[rawUnit]).map(function(i) {
       ltcUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10)
     })
