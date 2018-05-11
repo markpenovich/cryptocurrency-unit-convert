@@ -25,7 +25,6 @@
     "mocha": "^4.1.0"
   },
   "dependencies": {
-    "bignumber": "^1.1.0",
-    "bignumber.js": "^5.0.0"
+    "bignumber.js": "^7.0.1"
   }
 }
