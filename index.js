@@ -1,8 +1,8 @@
 'use strict'
 
-var BigNumber = require('bignumber.js')
+const BigNumber = require('bignumber.js')
 
-var rawUnits = require('./utils/json/Units.json')
+const rawUnits = require('./utils/json/Units.json')
 
 const Units = {}
 

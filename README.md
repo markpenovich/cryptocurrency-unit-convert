@@ -1,11 +1,10 @@
 # cryptocurrency-unit-convert
+[![Build Status](https://travis-ci.org/markpenovich/cryptocurrency-unit-convert.svg?branch=master)](https://travis-ci.org/markpenovich/cryptocurrency-unit-convert)
+[![Coverage Status](https://coveralls.io/repos/github/markpenovich/cryptocurrency-unit-convert/badge.svg)](https://coveralls.io/github/markpenovich/cryptocurrency-unit-convert?service=github)
 
 Cryptocurrency unit conversion utility.
 
 Currently supports Bitcoin, Ethereum, Ripple, and Litecoin.
-
-[![Build Status](https://travis-ci.org/markpenovich/cryptocurrency-unit-convert.svg?branch=master)](https://travis-ci.org/markpenovich/cryptocurrency-unit-convert)
-[![Coverage Status](https://coveralls.io/repos/github/markpenovich/cryptocurrency-unit-convert/badge.svg)](https://coveralls.io/github/markpenovich/cryptocurrency-unit-convert?service=github)
 
 ## Getting Started
 
@@ -56,7 +55,7 @@ const convertedLTC = Units.convertLTC('1.5', 'ltc', 'photon') // '150000000'
 ## Units
 #### Bitcoin
 
-satoshi, bit, ubit, mbit, btc
+satoshi, bit, ubtc, mbtc, btc
 
 #### Ethereum
 
