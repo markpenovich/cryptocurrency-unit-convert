@@ -68,3 +68,7 @@ drop, xrp
 #### Litecoin
 
 litoshi, photon, lite, ltc
+
+### Want more currencies?
+
+Email mark@telx.tech with the currency name, units, and unit names or submit a pull request. Currency list can be found in Units.json

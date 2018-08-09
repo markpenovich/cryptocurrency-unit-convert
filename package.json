@@ -1,6 +1,6 @@
 {
   "name": "cryptocurrency-unit-convert",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "This package converts cryptocurrency units",
   "main": "index.js",
   "engines": {
@@ -15,12 +15,26 @@
     "type": "git",
     "url": "git+https://github.com/markpenovich/cryptocurrency-unit-convert"
   },
+  "keywords": [
+    "cryptocurrency",
+    "bitcoin",
+    "satoshi",
+    "ethereum",
+    "wei",
+    "ripple",
+    "drop",
+    "litecoin",
+    "litoshi",
+    "convert",
+    "conversion"
+  ],
   "author": "Mark Penovich <mpenovich1@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "assert": "^1.4.1",
     "chai": "^4.1.2",
     "coveralls": "^3.0.2",
+    "eslint": "^5.3.0",
     "istanbul": "^0.4.5",
     "mocha": "^4.1.0"
   },
