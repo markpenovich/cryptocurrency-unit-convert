@@ -73,6 +73,6 @@ litoshi, photon, lite, ltc
 
 Email mark@telx.tech with the currency name, units, and unit names or submit a pull request. Currency list can be found in Units.json
 
-#### License
+## License
 
-MIT (c) 2018 [Mark Penovich](markpenovich.com)
+MIT (c) 2018 [Mark Penovich](http://markpenovich.com)
