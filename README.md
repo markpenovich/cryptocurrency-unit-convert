@@ -17,11 +17,13 @@ Require package into project
 require('cryptocurrency-unit-convert')
 ```
 
-There are 4 methods:
+There are 6 methods:
 - `convertBTC(value, fromUnit, toUnit)`
 - `convertETH(value, fromUnit, toUnit)`
 - `convertXRP(value, fromUnit, toUnit)`
 - `convertLTC(value, fromUnit, toUnit)`
+- `convertDASH(value, fromUnit, toUnit)`
+- `convertZEC(value, fromUnit, toUnit)`
 
 ## Examples
 ```javascript
@@ -50,6 +52,18 @@ const convertedLTC = Units.convertLTC('1', 'photon', 'ltc') // '0.00000001'
 
 // Convert 1.5 ltc to photon
 const convertedLTC = Units.convertLTC('1.5', 'ltc', 'photon') // '150000000'
+
+// Convert 1 duff to dash
+const convertedDASH = Units.convertDASH('1', 'duff', 'dash') // '0.00000001'
+
+// Convert 1.5 dash to duff
+const convertedDASH = Units.convertDASH('1.5', 'dash', 'duff') // '150000000'
+
+// Convert 1 zatoshi to zec
+const convertedZEC = Units.convertZEC('1', 'zatoshi', 'zec') // '0.00000001'
+
+// Convert 1.5 zec to zatoshi
+const convertedZEC = Units.convertZEC('1.5', 'zec', 'zatoshi') // '150000000'
 ```
 
 ## Units
@@ -68,6 +82,14 @@ drop, xrp
 #### Litecoin
 
 litoshi, photon, lite, ltc
+
+#### Dash
+
+duff, dash
+
+#### Zcash
+
+zatoshi, zec
 
 ### Want more currencies?
 
