@@ -4,7 +4,7 @@
 
 Cryptocurrency unit conversion utility.
 
-Currently supports Bitcoin, Ethereum, Ripple, and Litecoin.
+Currently supports Bitcoin, Ethereum, Ripple, Litecoin, Dash, and Zcash.
 
 ## Getting Started
 
