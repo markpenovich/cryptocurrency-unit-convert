@@ -183,4 +183,74 @@ describe('Units', () => {
       assert.equal(Units.convertLTC('1', 'lTc', 'LitoSHi'), '100000000')
     })
   })
+
+  describe('convertDASH', () => {
+    it('should convert Dash big unit to small unit', () => {
+      assert.equal(Units.convertDASH('1', 'dash', 'duff'), '100000000')
+   
+    })
+    it('should convert duff to bigger unit', function() {
+      assert.equal(Units.convertDASH('1', 'duff', 'dash'), '0.00000001')
+    })
+    it('should fail on invalid input duff', () => {
+      assert.throws(() => {
+        Units.convertDASH('1', 'random', 'duff')
+      }, /^Error: Unsupported input unit$/)
+    })
+    it('should fail on invalid output dash', () => {
+      assert.throws(() => {
+        Units.convertDASH('1', 'dash', 'random')
+      }, /^Error: Unsupported input unit$/)
+    })
+    it('should fail on non-decimal input', function () {
+      assert.throws(function () {
+        Units.convertDASH('1,00', 'dash', 'random')
+      }, /^Error: Unsupported value$/)
+
+      assert.throws(function () {
+        Units.convertDASH('test', 'dash', 'random')
+      }, /^Error: Unsupported value$/)
+    })
+    it('should work with decimal first numbers', () => {
+      assert.equal(Units.convertDASH('.1', 'dash', 'duff'), '10000000')
+    })
+    it('should work with any capitalization', () => {
+      assert.equal(Units.convertDASH('1', 'DAsh', 'dUff'), '100000000')
+    })
+  })
+
+  describe('convertZEC', () => {
+    it('should convert Zcash big unit to small unit', () => {
+      assert.equal(Units.convertZEC('1', 'zec', 'zatoshi'), '100000000')
+   
+    })
+    it('should convert duff to bigger unit', function() {
+      assert.equal(Units.convertZEC('1', 'zatoshi', 'zec'), '0.00000001')
+    })
+    it('should fail on invalid input zatoshi', () => {
+      assert.throws(() => {
+        Units.convertZEC('1', 'random', 'zatoshi')
+      }, /^Error: Unsupported input unit$/)
+    })
+    it('should fail on invalid output zec', () => {
+      assert.throws(() => {
+        Units.convertZEC('1', 'zec', 'random')
+      }, /^Error: Unsupported input unit$/)
+    })
+    it('should fail on non-decimal input', function () {
+      assert.throws(function () {
+        Units.convertZEC('1,00', 'zec', 'random')
+      }, /^Error: Unsupported value$/)
+
+      assert.throws(function () {
+        Units.convertZEC('test', 'zec', 'random')
+      }, /^Error: Unsupported value$/)
+    })
+    it('should work with decimal first numbers', () => {
+      assert.equal(Units.convertZEC('.1', 'zec', 'zatoshi'), '10000000')
+    })
+    it('should work with any capitalization', () => {
+      assert.equal(Units.convertZEC('1', 'ZeC', 'ZAtoShI'), '100000000')
+    })
+  })
 })

@@ -9,6 +9,8 @@ const btcUnits = {};
 const ethUnits = {};
 const xrpUnits = {};
 const ltcUnits = {};
+const dashUnits = {};
+const zecUnits = {};
 
 Object.keys(rawUnits).map(function (rawUnit) {
   Object.keys(rawUnits[rawUnit]).map(function(i) {
@@ -31,6 +33,16 @@ Object.keys(rawUnits).map(function (rawUnit) {
     if (rawUnit === "ltc") {
       ltcUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10);
       Units.ltcUnits = rawUnits[rawUnit];
+    }
+
+    if (rawUnit === "dash") {
+      dashUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10);
+      Units.dashUnits = rawUnits[rawUnit];
+    }
+
+    if (rawUnit === "zec") {
+      zecUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10);
+      Units.zecUnits = rawUnits[rawUnit];
     }
 
   });
@@ -96,6 +108,36 @@ Units.convertLTC = (value, from, to) => {
     throw new Error("Unsupported input unit");
   }
   return new BigNumber(value, 10).times(ltcUnits[from]).div(ltcUnits[to]).toString(10);
+};
+
+Units.convertDASH = (value, from, to) => {
+  from = from.toLowerCase();
+  to = to.toLowerCase();
+  if (!regX.test(value)) {
+    throw new Error("Unsupported value");
+  }
+  if (!dashUnits[from]) {
+    throw new Error("Unsupported input unit");
+  }
+  if (!dashUnits[to]) {
+    throw new Error("Unsupported input unit");
+  }
+  return new BigNumber(value, 10).times(dashUnits[from]).div(dashUnits[to]).toString(10);
+};
+
+Units.convertZEC = (value, from, to) => {
+  from = from.toLowerCase();
+  to = to.toLowerCase();
+  if (!regX.test(value)) {
+    throw new Error("Unsupported value");
+  }
+  if (!zecUnits[from]) {
+    throw new Error("Unsupported input unit");
+  }
+  if (!zecUnits[to]) {
+    throw new Error("Unsupported input unit");
+  }
+  return new BigNumber(value, 10).times(zecUnits[from]).div(zecUnits[to]).toString(10);
 };
 
 module.exports = Units;
