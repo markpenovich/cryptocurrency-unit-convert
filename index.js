@@ -6,6 +6,7 @@ const rawUnits = require("./Units.json");
 const Units = {};
 
 const btcUnits = {};
+const bchUnits = {};
 const ethUnits = {};
 const xrpUnits = {};
 const ltcUnits = {};
@@ -18,6 +19,11 @@ Object.keys(rawUnits).map(function (rawUnit) {
     if (rawUnit === "btc") {
       btcUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10);
       Units.btcUnits = rawUnits[rawUnit];
+    }
+
+    if (rawUnit === "bch") {
+      bchUnits[i] = new BigNumber(rawUnits[rawUnit][i], 10);
+      Units.bchUnits = rawUnits[rawUnit];
     }
 
     if (rawUnit === "eth") {
@@ -63,6 +69,21 @@ Units.convertBTC = (value, from, to) => {
     throw new Error("Unsupported input unit");
   }
   return new BigNumber(value, 10).times(btcUnits[from]).div(btcUnits[to]).toString(10);
+};
+
+Units.convertBCH = (value, from, to) => {
+  from = from.toLowerCase();
+  to = to.toLowerCase();
+  if (!regX.test(value)) {
+    throw new Error("Unsupported value");
+  }
+  if (!bchUnits[from]) {
+    throw new Error("Unsupported input unit");
+  }
+  if (!bchUnits[to]) {
+    throw new Error("Unsupported input unit");
+  }
+  return new BigNumber(value, 10).times(bchUnits[from]).div(bchUnits[to]).toString(10);
 };
 
 Units.convertETH = (value, from, to) => {
