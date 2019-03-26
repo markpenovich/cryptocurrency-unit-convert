@@ -19,6 +19,7 @@ require('cryptocurrency-unit-convert')
 
 There are 6 methods:
 - `convertBTC(value, fromUnit, toUnit)`
+- `convertBCH(value, fromUnit, toUnit)`
 - `convertETH(value, fromUnit, toUnit)`
 - `convertXRP(value, fromUnit, toUnit)`
 - `convertLTC(value, fromUnit, toUnit)`
@@ -34,6 +35,12 @@ const convertedBTC = Units.convertBTC('1', 'satoshi', 'btc') // '0.00000001'
 
 // Convert 1.5 btc to satoshi
 const convertedBTC = Units.convertBTC('1.5', 'btc', 'satoshi') // '150000000'
+
+// Convert 1 satoshi to bch
+const convertedBCH = Units.convertBCH('1', 'satoshi', 'bch') // '0.00000001'
+
+// Convert 1.5 bch to satoshi
+const convertedBCH = Units.convertBCH('1.5', 'bch', 'satoshi') // '150000000'
 
 // Convert 1 wei to eth
 const convertedETH = Units.convertETH('1', 'wei', 'eth') // '0.000000000000000001'
@@ -70,6 +77,10 @@ const convertedZEC = Units.convertZEC('1.5', 'zec', 'zatoshi') // '150000000'
 #### Bitcoin
 
 satoshi, bit, ubtc, mbtc, btc
+
+#### Bitcoin Cash
+
+satoshi, bit, ubch, mbch, bch
 
 #### Ethereum
 

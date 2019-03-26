@@ -57,6 +57,61 @@ describe('Units', () => {
     })
   })
 
+  describe('convertBCH', () => {
+    it('should convert BCH to smaller units', () => {
+      assert.equal(Units.convertBCH('1', 'bch', 'mbch'), '1000')
+      assert.equal(Units.convertBCH('1', 'bch', 'ubch'), '1000000')
+      assert.equal(Units.convertBCH('1', 'bch', 'bit'), '1000000')
+      assert.equal(Units.convertBCH('1', 'bch', 'satoshi'), '100000000')
+    })
+    it('should convert mbch to other units', () => {
+      assert.equal(Units.convertBCH('1', 'mbch', 'bch'), '0.001')
+      assert.equal(Units.convertBCH('1', 'mbch', 'ubch'), '1000')
+      assert.equal(Units.convertBCH('1', 'mbch', 'satoshi'), '100000')
+    })
+    it('should convert ubch to other units', function() {
+      assert.equal(Units.convertBCH('1', 'ubch', 'bch'), '0.000001')
+      assert.equal(Units.convertBCH('1', 'ubch', 'mbch'), '0.001')
+      assert.equal(Units.convertBCH('1', 'ubch', 'satoshi'), '100')
+    })
+    it('should convert Satoshi to bigger units', () => {
+      assert.equal(Units.convertBCH('1', 'satoshi', 'bit'), '0.01')
+      assert.equal(Units.convertBCH('1', 'satoshi', 'ubch'), '0.01')
+      assert.equal(Units.convertBCH('1', 'satoshi', 'mbch'), '0.00001')
+      assert.equal(Units.convertBCH('1', 'satoshi', 'bch'), '0.00000001')
+    })
+    it('should fail on invalid input satoshi', () => {
+      assert.throws(() => {
+        Units.convertBCH('1', 'random', 'satoshi')
+      }, /^Error: Unsupported input unit$/)
+    })
+    it('should fail on invalid input bch', () => {
+      assert.throws(() => {
+        Units.convertBCH('1', 'random', 'bch')
+      }, /^Error: Unsupported input unit$/)
+    })
+    it('should fail on invalid output bch', () => {
+      assert.throws(() => {
+        Units.convertBCH('1', 'satoshi', 'random')
+      }, /^Error: Unsupported input unit$/)
+    })
+    it('should fail on non-decimal input', function () {
+      assert.throws(function () {
+        Units.convertBCH('1,00', 'bch', 'random')
+      }, /^Error: Unsupported value$/)
+
+      assert.throws(function () {
+        Units.convertBCH('test', 'bch', 'random')
+      }, /^Error: Unsupported value$/)
+    })
+    it('should work with decimal first numbers', () => {
+      assert.equal(Units.convertBCH('.1', 'bch', 'satoshi'), '10000000')
+    })
+    it('should work with any capitalization', () => {
+      assert.equal(Units.convertBCH('1', 'bch', 'satOSHi'), '100000000')
+    })
+  })
+
   describe('convertETH', () => {
     it('should convert eth big unit to small unit', () => {
       assert.equal(Units.convertETH('1', 'eth', 'wei'), '1000000000000000000')
