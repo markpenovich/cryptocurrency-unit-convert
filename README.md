@@ -4,7 +4,7 @@
 
 Cryptocurrency unit conversion utility.
 
-Currently supports Bitcoin, Ethereum, Ripple, Litecoin, Dash, and Zcash.
+Currently supports Bitcoin, Bitcoin Cash, Ethereum, Ripple, Litecoin, Dash, and Zcash.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ Require package into project
 require('cryptocurrency-unit-convert')
 ```
 
-There are 6 methods:
+There are 7 methods:
 - `convertBTC(value, fromUnit, toUnit)`
 - `convertBCH(value, fromUnit, toUnit)`
 - `convertETH(value, fromUnit, toUnit)`
