@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": " node index.js",
-    "test": "mocha --reporter spec",
-    "cover": "nyc mocha"
+    "test": "mocha",
+    "cover": "nyc npm run test"
   },
   "repository": {
     "type": "git",
