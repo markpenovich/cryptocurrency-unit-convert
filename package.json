@@ -8,15 +8,26 @@
   },
   "scripts": {
     "dev": " node index.js",
-    "test": "mocha",
-    "cover": "nyc npm run test"
+    "test": "mocha --reporter spec",
+    "cover": "nyc mocha"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/markpenovich/cryptocurrency-unit-convert"
   },
-  "keywords": ["cryptocurrency", "bitcoin", "satoshi", "ethereum", "wei",
-    "ripple", "drop", "litecoin", "litoshi", "dash", "zcash", "convert",
+  "keywords": [
+    "cryptocurrency",
+    "bitcoin",
+    "satoshi",
+    "ethereum",
+    "wei",
+    "ripple",
+    "drop",
+    "litecoin",
+    "litoshi",
+    "dash",
+    "zcash",
+    "convert",
     "conversion"
   ],
   "author": "Mark Penovich <mpenovich1@gmail.com>",
