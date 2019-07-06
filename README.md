@@ -108,4 +108,4 @@ Email mark@telx.tech with the currency name, units, and unit names or submit a p
 
 ## License
 
-MIT (c) 2018 [Mark Penovich](http://markpenovich.com)
+MIT (c) 2019 [Mark Penovich](http://markpenovich.com)
