@@ -9,7 +9,7 @@
   "scripts": {
     "dev": " node index.js",
     "test": "mocha --reporter spec",
-    "cover": "nyc mocha -- -R spec test/*"
+    "cover": "nyc mocha"
   },
   "repository": {
     "type": "git",
