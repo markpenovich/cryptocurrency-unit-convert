@@ -1,6 +1,6 @@
 {
   "name": "cryptocurrency-unit-convert",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "This package converts cryptocurrency units",
   "main": "index.js",
   "engines": {
@@ -15,19 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/markpenovich/cryptocurrency-unit-convert"
   },
-  "keywords": [
-    "cryptocurrency",
-    "bitcoin",
-    "satoshi",
-    "ethereum",
-    "wei",
-    "ripple",
-    "drop",
-    "litecoin",
-    "litoshi",
-    "dash",
-    "zcash",
-    "convert",
+  "keywords": ["cryptocurrency", "bitcoin", "satoshi", "ethereum", "wei",
+    "ripple", "drop", "litecoin", "litoshi", "dash", "zcash", "convert",
     "conversion"
   ],
   "author": "Mark Penovich <mpenovich1@gmail.com>",
@@ -38,7 +27,7 @@
     "coveralls": "^3.0.4",
     "eslint": "^5.16.0",
     "istanbul": "^0.4.5",
-    "mocha": "^4.1.0"
+    "mocha": "^6.1.4"
   },
   "dependencies": {
     "bignumber.js": "^7.2.1"
