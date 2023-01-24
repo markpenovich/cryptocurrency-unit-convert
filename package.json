@@ -1,6 +1,6 @@
 {
   "name": "cryptocurrency-unit-convert",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "This package converts cryptocurrency units",
   "main": "index.js",
   "engines": {
@@ -38,7 +38,7 @@
     "coveralls": "^3.0.4",
     "eslint": "^5.16.0",
     "istanbul": "^0.4.5",
-    "mocha": "^8.2.1",
+    "mocha": "^10.2.0",
     "nyc": "^14.1.1"
   },
   "dependencies": {
